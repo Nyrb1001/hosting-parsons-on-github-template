@@ -20,15 +20,11 @@ Arrange the blocks such that the code will output the cumulative sum of its inpu
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "def cumulative(x):
-\n" +
-    "    out = 0
-\n" +
-    "    for i in range(1,$$toggle::x::x+1$$):
-\n" +
-    "        out = out + $$toggle::i::x::1::out$$
-\n" +
-    "    return out";
+var initial = "def cumulative(x):\n" +
+    "    out = 0\n" +
+    "    for i in range(1,$$toggle::x::x+1$$):\n" +
+    "        out = out + $$toggle::i::x::1::out$$\n" +
+    "    return out"
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "test1-sortable",
     "max_wrong_lines": 10,
