@@ -26,16 +26,13 @@ Construct a program that outputs the cumulative sum of its input.
   var parsonsPuzzle = new ParsonsWidget({
     "sortableId": "sortable",
     "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.UnitTestGrader,
+    "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
     "can_indent": true,
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
-    "python3": true,
-    "trashId": "sortableTrash",
-    "unittest_code_prepend": "",
-    "unittests": "import unittestparson\nclass myTests(unittestparson.unittest):\n  def test_0(self):\n    self.assertEqual(cumulative(1),1,)\n  def test_1(self):\n    self.assertEqual(cumulative(2),3,)\n  def test_2(self):\n    self.assertEqual(cumulative(8),36,)\n_test_result = myTests().main()"
+    "python3": true
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
