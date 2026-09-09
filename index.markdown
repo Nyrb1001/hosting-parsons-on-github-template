@@ -9,13 +9,12 @@ title: Multiple Parson's Problems on One Page
 
 ## Parsons 1 (Line Based Grader)
 Arrange the blocks such that the code will output the cumulative sum of its input. For example, an input of five would yield an output of 5+4+3+2+1 = **15**
-
-<div id="sortableTrash" class="sortable-code"></div> 
-<div id="sortable" class="sortable-code"></div> 
+<div id="itter-sortableTrash" class="sortable-code"></div> 
+<div id="itter-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="itter-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="itter-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
@@ -29,7 +28,7 @@ Arrange the blocks such that the code will output the cumulative sum of its inpu
 \n" +
     "    return out";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "sortable",
+    "sortableId": "itter-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.UnitTestGrader,
     "exec_limit": 2500,
@@ -38,17 +37,17 @@ Arrange the blocks such that the code will output the cumulative sum of its inpu
     "lang": "en",
     "show_feedback": true,
     "python3": true,
-    "trashId": "sortableTrash",
+    "trashId": "itter-sortableTrash",
     "unittest_code_prepend": "",
     "unittests": "import unittestparson\nclass myTests(unittestparson.unittest):\n  def test_0(self):\n    self.assertEqual(cumulative(1),1,)\n  def test_1(self):\n    self.assertEqual(cumulative(2),3,)\n  def test_2(self):\n    self.assertEqual(cumulative(8),36,)\n_test_result = myTests().main()"
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#newInstanceLink").click(function(event){ 
+  $("#itter-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#feedbackLink").click(function(event){ 
+  $("#itter-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
